@@ -7,6 +7,7 @@ def safe_print_list(my_list=[], x=0):
                 break
             print("{}".format(arguments), end="")
             count = count + 1
-        print("")
-    except TestError:
-        return count
+    except testerror:
+        pass
+    print("")
+    return count
