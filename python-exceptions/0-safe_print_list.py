@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
+    count = 0
     try:
-        for index, arguments in enumerate(my_list, start=1):
-            print("{:d}".format(arguments), end="")
-            if index == 2:
+        for index, arguments in enumerate(my_list):
+            if index >= x:
                 break
+            print("{}".format(arguments), end="")
+            count = count + 1
         print("")
-        return x
+        return count
     except:
-        print("Your code is wrong !!")
+        return count
 
     
