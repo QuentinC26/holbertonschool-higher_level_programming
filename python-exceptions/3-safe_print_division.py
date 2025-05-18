@@ -6,8 +6,8 @@ def safe_print_division(a, b):
         pass
     finally:
         if b == 0:
-            print ("Inside result: None")
+            print("Inside result: None")
             return None
         else:
-            print ("Inside result: {}".format(result))
+            print("Inside result: {}".format(result))
             return result
