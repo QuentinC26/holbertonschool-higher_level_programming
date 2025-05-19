@@ -1,0 +1,1 @@
+Class and object project
