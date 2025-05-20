@@ -56,7 +56,7 @@ class Square:
                 print("")
         if self.position[1] > 0:
             print("")
-        
+
     def area(self):
         # i add self.__size **2 for have the area of Square.
         return self.__size**2
