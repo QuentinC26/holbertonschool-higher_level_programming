@@ -35,7 +35,7 @@ class Square:
         else:
             for horizontal in range(self.size):
                 for vertical in range(self.size):
-                    print("#", end ="")
+                    print("#", end="")
                 print("")
 
     def area(self):
