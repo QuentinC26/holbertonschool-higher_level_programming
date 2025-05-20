@@ -13,5 +13,5 @@ class Square:
     Square class is a class that represents a square.
     This must add Private instance attribute: size
     '''
-    def __init__(self, _Square__size):
-        self._Square__size = _Square__size
+    def __init__(self, size):
+        self.__size = size
