@@ -50,10 +50,10 @@ class Rectangle:
 
     def __str__(self):
         if self.width == 0 or self.height == 0:
-            pass
+            return ""
         else:
             for horizontal in range(self.height):
                 for vertical in range(self.width):
                     print("#", end="")
                 print("")
-        return str()
+            return str()
