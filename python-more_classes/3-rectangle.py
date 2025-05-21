@@ -56,13 +56,13 @@ class Rectangle:
         else:
             for horizontal in range(self.__height):
                 if self.width > 0:
-                    new_hastag = hastag + hastag
-                    print(new_hastag, end="")
-                    print("")
+                    line_of_hastag = hastag + hastag
+                    print(hastag, end="")
                 if self.height > 0:
-                    new_hastag = hastag + hastag
-                    print(new_hastag, end="")
-                    print("")
-                    count = count + 1
-                for vertical in range(self.__width):
-                    return str(new_hastag)
+                    line_of_hastag = hastag + hastag
+                    print(hastag, end="")
+                count = count + 1
+                print("")
+            for vertical in range(self.__width):
+                pass
+        return str(line_of_hastag)
