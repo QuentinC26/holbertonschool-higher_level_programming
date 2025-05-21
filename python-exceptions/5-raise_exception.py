@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-value = 0
-if isinstance(value, int):
-    pass
-raise TypeError("Exception raised")
+def raise_exception():
+    word = "hello"
+    if not type(word) is int:
+        raise TypeError
