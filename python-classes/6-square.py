@@ -14,9 +14,9 @@ class Square:
     Square class is a class that represents a square.
     I add Private instance attribute: size
     '''
-    def __init__(self, size=0, __position=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
-        self.__position = __position
+        self.position = position
 
     @property
     def size(self):
