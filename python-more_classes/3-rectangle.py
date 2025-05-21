@@ -49,10 +49,20 @@ class Rectangle:
             return (self.width + self.height) * 2
 
     def __str__(self):
-        rectangle = "#"
+        hastag = "#"
+        count = 0
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            for horizontal in range(self.height):
-                for vertical in range(self.width):
-                    return str(rectangle)
+            for horizontal in range(self.__height):
+                if self.width > 0:
+                    new_hastag = hastag + hastag
+                    print(new_hastag, end="")
+                    print("")
+                if self.height > 0:
+                    new_hastag = hastag + hastag
+                    print(new_hastag, end="")
+                    print("")
+                    count = count + 1
+                for vertical in range(self.__width):
+                    return str(new_hastag)
