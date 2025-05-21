@@ -15,8 +15,8 @@ class Square:
     I add Private instance attribute: size
     '''
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -36,14 +36,16 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, int):
+        if not isinstance(value, tuple):
             raise TypeError("size must be an integer")
-        if value < 0:
+        if value[0] < 0 or value[1] < 0:
             raise ValueError("size must be >= 0")
-        if not len(self.position) == 2:
+        if not len(value) == 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if not self.position < 0:
+        if self.position < 0 :
             raise ValueError("position must be a tuple of 2 positive integers")
+        if value[0] >= 0 or value[1] >= 0:
+            print("")
         self.__position = value
 
     def my_print(self):
@@ -54,8 +56,6 @@ class Square:
                 for vertical in range(self.size):
                     print("#", end="")
                 print("")
-        if self.position[1] > 0:
-            print("")
 
     def area(self):
         # i add self.__size **2 for have the area of Square.
