@@ -58,7 +58,6 @@ class Square:
                 for vertical in range(self.size):
                     print("#", end="")
                 print("")
-                
 
     def area(self):
         # i add self.__size **2 for have the area of Square.
