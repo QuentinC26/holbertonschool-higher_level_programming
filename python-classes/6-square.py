@@ -42,8 +42,6 @@ class Square:
             raise ValueError("position must be a tuple of 2 positive integers")
         if not len(value) == 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if value[0] >= 0 or value[1] >= 0:
-            print(" ")
         self.__position = value
 
     def my_print(self):
