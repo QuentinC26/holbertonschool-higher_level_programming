@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 def print_last_digit(number):
-    last = number % 10
-    if last < 0:
+    if number < 0:
+        last = number % -10
         last = last * (-1)
         print(last, end="")
         return last
     else:
-        print(last, end="")
-        return last
+        print(number % 10, end ="")
+        return number % 10
