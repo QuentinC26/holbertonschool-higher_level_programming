@@ -5,6 +5,7 @@ Project Inheritance
 i want print the list of available attributes and methods of an object.
 """
 
+
 def is_same_class(obj, a_class):
     """
     Project Inheritance
