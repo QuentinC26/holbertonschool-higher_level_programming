@@ -6,5 +6,5 @@ def print_last_digit(number):
         print(last, end="")
         return last
     else:
-        print(number % 10, end ="")
+        print(number % 10, end="")
         return number % 10
