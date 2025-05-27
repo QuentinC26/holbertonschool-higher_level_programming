@@ -14,16 +14,18 @@ class MyList(list):
     """
 
 
-def __init__(self):
-    super().__init__(self)
+    def __init__(self):
+        pass
 
 
-def print_sorted(self):
-    """
-    Project Inheritance
+    def print_sorted(self):
+        """
+        Project Inheritance
 
-    i want print the list of available attributes and methods of an object.
-    """
-    if not isinstance(self, int):
-        raise TypeError("Its not a integer")
-    return MyList
+        i want print the list of available attributes and methods of an object.
+        """
+        for index in self:
+            if not isinstance(index, int):
+                raise TypeError("Its not a integer")
+        print(sorted(self))
+        return self
