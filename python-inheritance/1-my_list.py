@@ -19,4 +19,3 @@ class MyList(list):
         i want print the list of available attributes and methods of an object.
         """
         print(sorted(self))
-
