@@ -1,10 +1,42 @@
-#!/usr/bin/python3
-class MyList(list):
-    def __init__(self):
-        pass
-    def print_sorted(self):
-        for index in self:
-            if not isinstance(index, int):
-                raise TypeError("Its not a integer")
-        print(sorted(self))
-        return self
+Using ``MyList``
+
+    >>> MyList = __import__('1-my_list').MyList
+
+The base test:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+
+    >>> print(my_list)
+    [1, 4, 2]
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+    >>> print(my_list)
+    [1, 4, 2]
+
+Test with float:
+    >>> my_list = MyList()
+    >>> my_list.append(1.5)
+    >>> my_list.append(4.5)
+    >>> my_list.append(2.5)
+
+    >>> print(my_list)
+    [1.5, 4.5, 2.5]
+    >>> my_list.print_sorted()
+    [1.5, 2.5, 4.5]
+    >>> print(my_list)
+    [1.5, 4.5, 2.5]
+
+Test with negative numbers:
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+
+    >>> print(my_list)
+    [-1, 4, 2]
+    >>> my_list.print_sorted()
+    [-1, 2, 4]
+    >>> print(my_list)
+    [-1, 4, 2]
