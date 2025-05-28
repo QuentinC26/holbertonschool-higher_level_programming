@@ -16,11 +16,9 @@ class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
-    @property
     def area(self):
         return math.pi * self.radius ** 2
 
-    @property
     def perimeter(self):
         return 2 * math.pi * self.radius
 
@@ -30,11 +28,9 @@ class Rectangle(Shape):
         self.height = height
         self.width = width
 
-    @property
     def area(self):
         return self.height * self.width
 
-    @property
     def perimeter(self):
         return 2*(self.height + self.width)
 
