@@ -12,7 +12,7 @@ def inherits_from(obj, a_class):
 
     i want print the list of available attributes and methods of an object.
     """
-    if not type(obj) is a_class:
+    if issubclass(a_class, int):
         return True
     else:
         return False
