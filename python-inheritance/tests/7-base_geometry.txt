@@ -1,6 +1,6 @@
 Using ``MyList``
 
-    >>> MyList = __import__('7-base_geometry').MyList
+    >>> MyList = __import__('7-base_geometry').BaseGeometry
 
 The base test:
     >>> bg = BaseGeometry()
