@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Project Inheritance
+
+i create a class.
+"""
+
 
 class BaseGeometry:
     """
