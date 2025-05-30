@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""
-Project Inheritance
-
-i create a class.
-"""
-
+if __name__ == "__main__":
+    from base_geometry import BaseGeometry
 
 class BaseGeometry:
     """
