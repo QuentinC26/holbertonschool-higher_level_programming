@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from base_geometry import BaseGeometry
 
 class BaseGeometry:
     """
