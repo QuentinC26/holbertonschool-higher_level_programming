@@ -264,7 +264,7 @@ Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
 
-Cas où le type Error est un complex:
+Cas où le age est negatif:
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
@@ -278,12 +278,60 @@ Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
+>>> bg.integer_validator("age", -4)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
+
+Cas où le type Error est un object:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("name", object)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
 ValueError: age must be greater than 0
 
 >>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
+
+Cas où distance est égal 0 :
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("name", object)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", 0)
 Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
