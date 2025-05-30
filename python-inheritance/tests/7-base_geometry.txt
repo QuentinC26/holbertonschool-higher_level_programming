@@ -1,163 +1,23 @@
-Using ``MyList``
+Using ``BaseGeometry``
 
-    >>> MyList = __import__('7-base_geometry').BaseGeometry
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 The base test:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
+    >>> bg.integer_validator("width", 89)   
 
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
+    >>>  bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
 
-    >>> try:
     >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
 
-    >>> try:
     >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-The name is int:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "25")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The name is string:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The name is float:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "4.5")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The value of age is negative:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", -7)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The value of age is positive:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", -4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The value of distance is positive:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", 4)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    The value of distance == 0:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-
-    >>> try:
-    >>> bg.integer_validator("name", "John")
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("age", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
-
-    >>> try:
-    >>> bg.integer_validator("distance", 0)
-    >>> except Exception as e:
-    >>> print("[{}] {}".format(e.__class__.__name__, e))
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
