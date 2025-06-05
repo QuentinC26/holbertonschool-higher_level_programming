@@ -3,8 +3,5 @@ my_file_0.txt
 my_first_file.txt
 file_append.txt
 filename
-filename.json
-my_dict.json
-my_list.json
-my_obj.json
-my_set.json
+*.json
+
