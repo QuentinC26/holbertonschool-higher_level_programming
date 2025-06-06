@@ -26,5 +26,5 @@ class CustomObject:
             with open(filename, 'rb') as text_file:
                 read_data = pickle.load(text_file)
             return read_data
-        except TypeError:
+        except TypeError or ValueError:
             return None
