@@ -10,7 +10,7 @@ class CustomObject:
 
     def display(self):
         print("Name: {}".format(self.name))
-        print("age: {}".format(self.age))
+        print("Age: {}".format(self.age))
         print("Is Student: {}".format(self.is_student))
 
     def serialize(self, filename):
