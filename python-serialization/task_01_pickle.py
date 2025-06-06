@@ -17,7 +17,7 @@ class CustomObject:
         try:
             with open(filename, 'wb') as text_file:
                 write_data = pickle.dump(self, text_file)
-        except TypeError:
+        except TypeError or ValueError:
             return None
 
     @classmethod
