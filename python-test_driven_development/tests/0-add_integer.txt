@@ -26,3 +26,11 @@ The value is None:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+Float overflow:
+
+    >>> big_integer = 10 ** 1000
+    >>> print(float(big_integer))
+    Traceback (most recent call last):
+    ...
+    OverflowError: int too large to convert to float
