@@ -29,8 +29,8 @@ The value is None:
 
 Float overflow:
 
-    >>> big_integer = 10 ** 1000
-    >>> print(float(big_integer))
+    >>> a = 10 ** 1000
+    >>> print(float(a))
     Traceback (most recent call last):
     ...
     OverflowError: int too large to convert to float
