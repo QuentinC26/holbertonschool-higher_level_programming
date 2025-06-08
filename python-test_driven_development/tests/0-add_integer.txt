@@ -32,3 +32,14 @@ Not A Number Error:
     >>> a = float('nan')
     >>> a != a
     True
+
+NaN Conversion Error:
+
+    >>> int(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Float Overflow:
+    >>> float('1e5000')
+    inf
