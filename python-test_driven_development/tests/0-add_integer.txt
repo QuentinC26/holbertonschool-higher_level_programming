@@ -27,12 +27,6 @@ The value is None:
     ...
     TypeError: a must be an integer
 
-Not A Number Error:
-
-    >>> a = float('nan')
-    >>> a != a
-    True
-
 NaN Conversion Error:
 
     >>> int(float('nan'))
