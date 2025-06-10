@@ -27,13 +27,16 @@ The value is None:
     ...
     TypeError: a must be an integer
 
-NaN Conversion Error:
+Float Overflow:
 
-    >>> int(float('nan'))
+    >>> print(add_integer(float('nan')))
     Traceback (most recent call last):
-        ...
+    ...
     ValueError: cannot convert float NaN to integer
 
 Float Overflow:
-    >>> float('1e5000')
-    inf
+
+    >>> print(add_integer(3, inf))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
