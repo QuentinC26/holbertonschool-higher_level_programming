@@ -27,13 +27,6 @@ The value is None:
     ...
     TypeError: a must be an integer
 
-First Not A Number Error:
-    >>> a = float('nan')
-    >>> a != a
-    Traceback (most recent call last):
-    ...
-    NotaNumberError: you have a NotaNumberError
-
 Not A Number Error:
 
     >>> a = float('nan')
