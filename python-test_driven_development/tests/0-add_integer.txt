@@ -36,7 +36,7 @@ Float Overflow:
 
 Float Overflow:
 
-    >>> print(add_integer(3, inf))
+    >>> print(add_integer(3, float('inf')))
     Traceback (most recent call last):
     ...
-    ValueError: cannot convert float NaN to integer
+    OverflowError: cannot convert float infinity to integer
