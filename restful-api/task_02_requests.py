@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-import requests, json, csv
+import requests
+import csv
+import json
 response = requests.get("https://jsonplaceholder.typicode.com/posts")
+
+
 def fetch_and_print_posts():
     if response.status_code == 200:
         print("Status Code:", response.status_code)
@@ -9,6 +13,8 @@ def fetch_and_print_posts():
             print(index['title'])
     else:
         print("Status Code:", response.status_code)
+
+
 def fetch_and_save_posts():
     if response.status_code == 200:
         with open('posts.csv', 'w', encoding="UTF-8", newline="") as file:
