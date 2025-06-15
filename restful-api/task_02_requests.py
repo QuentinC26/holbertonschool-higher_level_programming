@@ -10,4 +10,8 @@ def fetch_and_print_posts():
     else:
         print("Status Code:", response.status_code)
 def fetch_and_save_posts():
-    pass
+    if response.status_code == 200:
+        with open('posts.csv', 'w', encoding="UTF-8", newline="") as file:
+            fieldnames = ["id", "title", "body"]
+            write_file = csv.DictWriter(file, fieldnames=fieldnames)
+            write_file.writeheader()
