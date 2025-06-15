@@ -18,9 +18,10 @@ def fetch_and_print_posts():
 def fetch_and_save_posts():
     if response.status_code == 200:
         with open('posts.csv', 'w', encoding="UTF-8", newline="") as file:
+            data = response.json()
             fieldnames = ["id", "title", "body"]
             write_file = csv.DictWriter(file, fieldnames=fieldnames)
             write_file.writeheader()
-    data = response.json()
-    for index in data:
-        dictionnary = [fieldnames, data]
+            for index in data:
+                new_dictionnary = {"id": index["id"], "title": index["title"], "body": index["body"]}
+                write_file.writerow(new_dictionnary)
