@@ -21,3 +21,6 @@ def fetch_and_save_posts():
             fieldnames = ["id", "title", "body"]
             write_file = csv.DictWriter(file, fieldnames=fieldnames)
             write_file.writeheader()
+    data = response.json()
+    for index in data:
+        dictionnary = [fieldnames, data]
