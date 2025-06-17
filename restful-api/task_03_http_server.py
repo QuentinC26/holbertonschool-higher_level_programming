@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import http.server
-import SimpleHTTPServer
 import json
 
 class the_server(http.server.BaseHTTPRequestHandler):
@@ -9,7 +8,7 @@ class the_server(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("Hello, this is a simple API!")
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == '/data':
             data = {
                 "name": "John",
@@ -38,12 +37,10 @@ class the_server(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("Endpoint not found")
+            self.wfile.write(b"Endpoint not found")
 
 if __name__ == "__main__":
     port = 8000
     adress = ("", port)
-    server = http.server.HTTPServer
-    handler = http.server.SimpleHTTPRequestHandler
-    httpd = server(adress, handler)
+    httpd = http.server.HTTPServer(adress, the_server)
     httpd.serve_forever()
