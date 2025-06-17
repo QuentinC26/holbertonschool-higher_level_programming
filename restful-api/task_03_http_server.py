@@ -3,7 +3,7 @@ import http.server
 import json
 
 class the_server(http.server.BaseHTTPRequestHandler):
-    def DO_GET(self):
+    def do_GET(self):
         if self.path == '/':
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
