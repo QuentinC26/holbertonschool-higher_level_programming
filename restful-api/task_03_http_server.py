@@ -23,7 +23,7 @@ class the_server(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(json.dumps(data).encode('utf8'))
+            self.wfile.write(b"OK")
         elif self.path == '/info':
             info = {
                 "version": 1.0,
