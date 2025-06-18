@@ -34,9 +34,10 @@ def add_user():
     city = data['city']
     users[user] = {
         "message": "User added",
-        "user": {
+        "user": user,
+        {
         "username": user,
-        "name": data.get('name') ,
+        "name": data.get('name'),
         "age": data.get('age'),
         "city": data.get('city')
         }
