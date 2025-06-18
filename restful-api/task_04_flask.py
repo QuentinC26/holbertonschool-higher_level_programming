@@ -8,7 +8,7 @@ users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los An
 
 @app.route('/', methods=['GET'])
 def home():
-    return jsonify "Welcome to the Flask API!"
+    return "Welcome to the Flask API!"
 
 @app.route('/data', methods=['GET'])
 def get_users():
@@ -16,7 +16,7 @@ def get_users():
 
 @app.route('/status', methods=['GET'])
 def get_status():
-    return jsonify "OK"
+    return "OK"
 
 @app.route('/users/<username>', methods=['GET'])
 def get_username(username):
