@@ -22,13 +22,13 @@ def get_status():
 def get_username(username):
     if username in users:
         return jsonify(users[username]), 200
-    return jsonify({"error": "User not found"}), 404
+    return jsonify({"error": "User not found"})
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
     if not data or 'username' not in data:
-        return jsonify({"error": "User is required"}), 400
+        return jsonify({"error": "User is required"})
     user = data['username']
     age = data['age']
     city = data['city']
