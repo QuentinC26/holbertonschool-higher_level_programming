@@ -8,21 +8,21 @@ users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los An
 
 @app.route('/', methods=['GET'])
 def home():
-    return jsonify("Welcome to the Flask API!")
+    return jsonify({"Welcome to the Flask API!"})
 
 @app.route('/data', methods=['GET'])
 def get_users():
-    return jsonify(list(users.keys()))
+    return jsonify({list(users.keys())})
 
 @app.route('/status', methods=['GET'])
 def get_status():
-    return jsonify("OK")
+    return jsonify({"OK"})
 
 @app.route('/users/<username>', methods=['GET'])
 def get_username(username):
     if username in users:
         return jsonify(users[username])
-    return jsonify({"error": "User not found"})
+    return jsonify({"error": "User not found"}), 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
