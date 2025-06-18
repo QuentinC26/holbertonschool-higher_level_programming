@@ -21,8 +21,8 @@ def get_status():
 @app.route('/users/<username>')
 def get_username(username):
     for user in users:
-        if user["username"] == users_username:
-            return jsonify(users)
+        if user['username'] == username:
+            return jsonify(user)
     return jsonify({"error": "User not found"})
 
 if __name__ == "__main__":
