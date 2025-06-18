@@ -10,7 +10,7 @@ users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los An
 def home():
     return "Welcome to the Flask API!"
 
-@app.route('/data', methods=['GET'])
+@app.route('/data')
 def get_users():
     return jsonify(list(users.keys()))
 
