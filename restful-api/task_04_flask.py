@@ -8,15 +8,15 @@ users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los An
 
 @app.route('/', methods=['GET'])
 def home():
-    return jsonify({"Welcome to the Flask API!"})
+    return jsonify "Welcome to the Flask API!"
 
 @app.route('/data', methods=['GET'])
 def get_users():
-    return jsonify({list(users.keys())})
+    return jsonify(list(users.keys()))
 
 @app.route('/status', methods=['GET'])
 def get_status():
-    return jsonify({"OK"})
+    return jsonify "OK"
 
 @app.route('/users/<username>', methods=['GET'])
 def get_username(username):
@@ -42,7 +42,7 @@ def add_user():
         "city": data.get('city')
         }
     }
-    return jsonify(users[user]), 201
+    return jsonify({users[user]}), 201
 
 if __name__ == "__main__":
     app.run(debug=True)
