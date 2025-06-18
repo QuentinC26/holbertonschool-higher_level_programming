@@ -25,6 +25,7 @@ def get_username(username):
     return jsonify({"error": "User not found"})
 
 @app.route('/add_user', methods=['POST'])
+@app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
     if not data or 'username' in users:
@@ -34,7 +35,7 @@ def add_user():
     city = data['city']
     users[user] = {
         "message": "User added",
-        "user": user,
+        "user":
         {
         "username": user,
         "name": data.get('name'),
@@ -42,7 +43,7 @@ def add_user():
         "city": data.get('city')
         }
     }
-    return jsonify(data), 201
+    return jsonify(users[user]), 201
 
 if __name__ == "__main__":
     app.run(debug=True)
