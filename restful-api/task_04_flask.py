@@ -12,7 +12,7 @@ def home():
 
 @app.route('/data', methods=['GET'])
 def get_users():
-    return jsonify({"user": list(users.keys())})
+    return jsonify(list(users.keys()))
 
 @app.route('/status', methods=['GET'])
 def get_status():
