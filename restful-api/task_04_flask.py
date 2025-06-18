@@ -12,9 +12,18 @@ def home():
 
 @app.route('/data')
 def get_users():
-    for index in users:
-        if index == get(username):
-            return jsonify(get(username))
+    return jsonify(list(users))
+
+@app.route('/status')
+def get_status():
+    return jsonify("OK")
+
+@app.route('/users/<username>')
+def get_username(username):
+    for user in users:
+        if user["username"] == users_username:
+            return jsonify(users)
+    return jsonify({"error": "User not found"})
 
 if __name__ == "__main__":
     app.run(debug=True)
