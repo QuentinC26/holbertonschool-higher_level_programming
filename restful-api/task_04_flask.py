@@ -28,7 +28,7 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    data = request.get_json(silent=True)
+    data = request.get_json()
     if not data or "username" not in data:
         return jsonify({"error": "User is required"}), 400
 
@@ -40,4 +40,4 @@ def add_user():
     }), 201
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
