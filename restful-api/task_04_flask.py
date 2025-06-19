@@ -38,6 +38,7 @@ def add_user():
     if not data or "username" not in data or not data["username"]:
         return jsonify({"error": "User is required"}), 400
 
+    username = data["username"]
     users[username] = data
 
     return jsonify({
