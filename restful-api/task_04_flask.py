@@ -19,7 +19,7 @@ def get_status():
     return "OK"
 
 @app.route('/users/<username>')
-def get_username(username):
+def get_user(username):
     user = users.get(username)
     if username in users:
         return jsonify(user)
