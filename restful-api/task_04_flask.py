@@ -32,17 +32,7 @@ def add_user():
     user = data['username']
     age = data['age']
     city = data['city']
-    users[user] = {
-        "message": "User added",
-        "user":
-        {
-        "username": user,
-        "name": data.get('name'),
-        "age": data.get('age'),
-        "city": data.get('city')
-        }
-    }
-    return jsonify(users[user]), 201
+    return jsonify({"message": "User added", "user": users}), 201
 
 if __name__ == "__main__":
     app.run(debug=True)
