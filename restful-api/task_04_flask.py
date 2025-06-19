@@ -22,7 +22,7 @@ def get_status():
 def get_username(username):
     user = users.get(username)
     if username in users:
-        return jsonify(username)
+        return jsonify(user)
     return jsonify({"error": "User not found"}), 404
 
 @app.route('/add_user', methods=['POST'])
