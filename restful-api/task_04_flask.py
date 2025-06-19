@@ -29,8 +29,8 @@ def add_user():
     data = request.get_json()
     if not data or 'username' in users:
         return jsonify({"error": "User is required"}), 400
-    users = data['user']
-    data = users['user']
+    username = data['username']
+    data = users[username]
     return jsonify({"message": "User added", "user": data}), 201
 
 if __name__ == "__main__":
