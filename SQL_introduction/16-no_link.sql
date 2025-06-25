@@ -1,2 +1,2 @@
 -- lists all records of the table second_table with different condition
-SELECT DISTINCT score, name FROM second_table ORDER by score DESC
+SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER by score DESC
