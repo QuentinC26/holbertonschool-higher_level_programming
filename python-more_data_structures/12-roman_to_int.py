@@ -11,4 +11,4 @@ def roman_to_int(roman_string):
                         'D': 500,
                         'M': 1000
                         }
-    return map(roman_string, roman_conversion)
+    return map(lambda add: roman_conversion + roman_string, roman_string)
