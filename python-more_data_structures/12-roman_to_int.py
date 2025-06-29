@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    count = 0
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
     roman_conversion = {
@@ -11,8 +12,20 @@ def roman_to_int(roman_string):
                         'D': 500,
                         'M': 1000
                         }
-    for key, value in roman_conversion.items():
-        for index in roman_string:
-            if index == key:
-                roman_string = value
-            return roman_string
+    for index in roman_string:
+        if index == "I":
+            roman_string = roman_conversion.get('I')
+        elif index == "V":
+            roman_string = roman_conversion.get('V')
+        elif index == "X":
+            roman_string = roman_conversion.get('X')
+        elif index == "L":
+            roman_string = roman_conversion.get('L')
+        elif index == "C":
+            roman_string = roman_conversion.get('C')
+        elif index == "D":
+            roman_string = roman_conversion.get('D')
+        elif index == "X":
+            roman_string = roman_conversion.get('M')
+        count = count + 1
+        return roman_string
