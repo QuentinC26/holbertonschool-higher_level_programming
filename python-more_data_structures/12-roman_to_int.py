@@ -11,4 +11,8 @@ def roman_to_int(roman_string):
                         'D': 500,
                         'M': 1000
                         }
-    return map(lambda add: roman_conversion + roman_string, roman_string)
+    for key, value in roman_conversion.items():
+        for index in roman_string:
+            if index == key:
+                roman_string = value
+            return roman_string
