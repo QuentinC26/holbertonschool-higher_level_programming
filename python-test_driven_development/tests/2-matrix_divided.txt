@@ -1,0 +1,7 @@
+Using ``matrix_divided``
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+The base test:
+
+    A VENIR
