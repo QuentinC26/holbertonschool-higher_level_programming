@@ -4,8 +4,12 @@ def list_division(my_list_1, my_list_2, list_length):
         new_list = []
         for index in my_list_1:
             for index_2 in my_list_2:
-                if not index / index_2:
-                    return 0
+                if index_2 == 0:
+                    new_list.append(0)
+                if not isinstance(index_2, (int, float)):
+                    new_list.append(0)
+                if len(my_list_2) < list_length:
+                    new_list.append(0)
                 result = index / index_2
                 new_list.append(result)
         return new_list
