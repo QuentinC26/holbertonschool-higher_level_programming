@@ -27,5 +27,4 @@ def roman_to_int(roman_string):
             roman_string = roman_conversion.get('D')
         elif index == "X":
             roman_string = roman_conversion.get('M')
-        count = count + 1
-        return roman_string
+    return roman_string
