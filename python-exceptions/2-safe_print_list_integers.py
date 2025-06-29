@@ -9,6 +9,8 @@ def safe_print_list_integers(my_list=[], x=0):
             count = count + 1
             if isinstance(my_list, int):
                 print("{:d}".format(x))
+        except ValueError:
+            pass
         except TypeError:
             pass
     print("")
