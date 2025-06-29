@@ -4,23 +4,52 @@ Using ``matrix_divided``
 
 The lists of lists integer and div integer test:
 
-    matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-    ]
-
     >>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], 3))
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
 The lists of lists integer and div string test:
-
-    matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-    ]
 
     >>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], "John"))
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
 
+The lists of lists integer and div string test:
+
+    >>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+The lists of lists not integer and div integer test:
+
+    >>> print(matrix_divided([[1, 2, "John"], [4, 5, 6]], 4))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The lists of lists integer but not rectangular and div integer test:
+
+    >>> print(matrix_divided([[1, 2,], [4, 5, 6]], 4))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+The lists of lists  integer and div float infinity test:
+
+    >>> print(matrix_divided([[1, 2, 4], [4, 5, 6]], float('inf')))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Missing one argument:
+
+    >>> print(matrix_divided([[1, 2,], [4, 5, 6]]))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Missing two argument:
+
+    >>> print(matrix_divided())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
