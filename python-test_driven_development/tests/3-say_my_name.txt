@@ -15,3 +15,16 @@ Last name is not str :
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
+
+First Name and Last name are str :
+
+    >>> say_my_name("John", "Joe")
+    My name is John Joe
+
+Two arguments are missing :
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
