@@ -10,13 +10,4 @@ def text_indentation(text):
     '''
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for index in text:
-        if index == ".":
-            print(text, end="\n")
-            print("")
-        elif index == "?":
-            print(text, end="\n")
-            print("")
-        elif index == ":":
-            print(text, end="\n")
-            print("")
+    print(text)
