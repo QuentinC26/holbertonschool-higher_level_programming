@@ -21,7 +21,7 @@ def roman_to_int(roman_string):
         roman_string = sum(int_list)
         return roman_string
     elif int_list[0] < int_list[1]:
-        roman_string = int_list - int_list
+        roman_string = int_list[1] - int_list[0]
         return roman_string
     else:
         roman_string = sum(int_list)
