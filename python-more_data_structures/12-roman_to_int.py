@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    count = 0
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
     roman_conversion = {
@@ -12,19 +11,12 @@ def roman_to_int(roman_string):
                         'D': 500,
                         'M': 1000
                         }
-    for index in roman_string:
-        if index == "I":
-            roman_string = roman_conversion.get('I')
-        elif index == "V":
-            roman_string = roman_conversion.get('V')
-        elif index == "X":
-            roman_string = roman_conversion.get('X')
-        elif index == "L":
-            roman_string = roman_conversion.get('L')
-        elif index == "C":
-            roman_string = roman_conversion.get('C')
-        elif index == "D":
-            roman_string = roman_conversion.get('D')
-        elif index == "X":
-            roman_string = roman_conversion.get('M')
-    return roman_string
+    int_list = []
+    for key, value in roman_conversion.items():
+        for index in roman_string:
+            if index == key:
+                index = value
+                int_list.append(index)
+                test = sum(int_list)
+                print(test)
+            
