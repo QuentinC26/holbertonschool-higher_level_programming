@@ -17,9 +17,14 @@ def roman_to_int(roman_string):
             if index == key:
                 index = value
                 int_list.append(index)
-    if: 
-        roman_string = (int_list)
+    if int_list == 0 or 1:
+        roman_string = sum(int_list)
+        return roman_string
+    elif int_list[0] < int_list[1]:
+        roman_string = int_list - int_list
         return roman_string
     else:
         roman_string = sum(int_list)
         return roman_string
+
+ 
