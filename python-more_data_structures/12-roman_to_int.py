@@ -13,18 +13,17 @@ def roman_to_int(roman_string):
                         }
     int_list = []
     for key, value in roman_conversion.items():
-        for index in roman_string:
+        for index in reversed(roman_string):
             if index == key:
                 index = value
                 int_list.append(index)
-    if int_list == 0 or 1:
-        roman_string = sum(int_list)
-        return roman_string
-    elif int_list[0] < int_list[1]:
-        roman_string = int_list[1] - int_list[0]
-        return roman_string
-    else:
-        roman_string = sum(int_list)
-        return roman_string
-
- 
+    for count in reversed(int_list):
+        if int_list == 0 or 1:
+            roman_string = sum(int_list)
+            return roman_string
+        elif int_list[0] < int_list[1]:
+            roman_string = int_list[1] - int_list[0]
+            return roman_string
+        else:
+            roman_string = sum(int_list)
+            return roman_string
