@@ -17,10 +17,10 @@ def roman_to_int(roman_string):
             if index == key:
                 index = value
                 int_list.append(index)
-    for count in reversed(int_list):
-        if int_list[len(int_list) - 2] < int_list[len(int_list) - 1]:
-            roman_string = int_list[-1] - int_list[-2]
-            return roman_string
-        else:
-            roman_string = sum(int_list)
-            return roman_string
+    for count in range(len(int_list)):
+        if count != len(int_list) - 1:
+            if int_list[count] < int_list[count + 1]:
+                int_list[-1] = int_list[-1] - int_list[-2]
+                int_list[-2] = 0
+                print(int_list)
+    return sum(int_list)
