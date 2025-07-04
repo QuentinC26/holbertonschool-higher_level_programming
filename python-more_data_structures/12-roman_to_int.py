@@ -20,6 +20,7 @@ def roman_to_int(roman_string):
     for count in range(len(int_list)):
         if count != len(int_list) - 1:
             if int_list[count] < int_list[count + 1]:
-                int_list[-1] = int_list[-1] - int_list[-2]
-                int_list[-2] = 0
+                int_list[count] = int_list[count + 1] - int_list[count]
+                int_list[count + 1] = 0
+                count = count + 1
     return sum(int_list)
