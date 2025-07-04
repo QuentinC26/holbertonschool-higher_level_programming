@@ -22,5 +22,4 @@ def roman_to_int(roman_string):
             if int_list[count] < int_list[count + 1]:
                 int_list[-1] = int_list[-1] - int_list[-2]
                 int_list[-2] = 0
-                print(int_list)
     return sum(int_list)
