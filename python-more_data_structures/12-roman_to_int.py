@@ -12,17 +12,14 @@ def roman_to_int(roman_string):
                         'M': 1000
                         }
     int_list = []
-    for key, value in roman_conversion.items():
-        for index in reversed(roman_string):
+    for index in roman_string:
+        for key, value in roman_conversion.items():
             if index == key:
                 index = value
                 int_list.append(index)
     for count in reversed(int_list):
-        if int_list == 0 or 1:
-            roman_string = sum(int_list)
-            return roman_string
-        elif int_list[0] < int_list[1]:
-            roman_string = int_list[1] - int_list[0]
+        if int_list[len(int_list) - 2] < int_list[len(int_list) - 1]:
+            roman_string = int_list[-1] - int_list[-2]
             return roman_string
         else:
             roman_string = sum(int_list)
