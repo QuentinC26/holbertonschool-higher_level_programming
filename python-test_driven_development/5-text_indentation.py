@@ -10,4 +10,4 @@ def text_indentation(text):
     '''
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    print(text.replace(".", ".\n\n\n").replace("?", "?\n\n\n").replace(":", ":\n\n\n"))
+    print(text.replace(".", ".\n").replace("?", "?\n").replace(":", ":\n"))
