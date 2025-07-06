@@ -57,7 +57,6 @@ class Rectangle:
                     print("#", end="")
                 print("")
             return str()
-    
+
     def __repr__(self):
-        return f"Rectangle ({self.height}, {self.width})"
-    
+        return f"Rectangle ({self.width}, {self.height})"
