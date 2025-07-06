@@ -5,10 +5,15 @@ print a text with 2 new lines after each of these characters: ., ? and :
 
 
 def text_indentation(text):
-    '''
-    prints a text with 2 new lines after each of these characters: ., ? and :
-    '''
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
-    print(text.replace(". ", ".\n\n").replace("? ", "?\n\n").replace(": ", ":\n\n"), end="")
-
+    return_of_line_after = [".", ":", "?"]
+    for index, characters in enumerate(text):
+        if characters in return_of_line_after:
+            print(i, end="\n")
+            print()
+        elif characters == " ":
+            if text[index-1] in return_of_line_after:
+                continue
+            else:
+                print(characters, end="")
+        else:
+            print(characters, end="")
