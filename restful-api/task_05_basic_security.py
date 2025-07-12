@@ -13,11 +13,11 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
 jwt = JWTManager(app)
 
 users = {
-    "Anissa_du_06": {
+    "user1": {
         "password": generate_password_hash("password"),
         "role": "user"
     },
-    "surfeur_du_07": {
+    "admin1": {
         "password": generate_password_hash("password"),
         "role": "admin"
     }
