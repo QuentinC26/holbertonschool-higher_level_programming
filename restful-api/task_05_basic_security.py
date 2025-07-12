@@ -41,5 +41,34 @@ def post_receive_token():
         access_token = create_access_token(identity={"username": username, "role": users[username]["role"]})
         return jsonify(access_token=access_token)
 
+@auth.login_required
+@app.route('/basic-protected')
+if not users:
+    return {"Basic Auth: Access Denied"}
+else:
+    return {"Basic Auth: Access Granted"}
+
+@auth.login_required
+@app.route('/basic-protected')
+if not users:
+    return {"401 Unauthorized"}
+else:
+    return {"Basic Auth: Access Granted"}
+
+@jwt_required()
+@app.route('/jwt-protected')
+if not users:
+    return {"401 Unauthorized"}
+else:
+    return {"JWT Auth: Access Granted"}
+
+@jwt_required()
+@app.route('/admin-only')
+if not admin:
+    return {"error": "Admin access required"}, 403
+else:
+    return {"Admin Access: Granted"}
+
+
 if __name__ == '__main__':
     app.run(debug=True)
