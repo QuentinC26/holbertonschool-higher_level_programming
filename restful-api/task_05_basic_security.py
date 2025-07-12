@@ -60,6 +60,7 @@ def post_receive_token():
     if not username or not password or username not in users or not check_password_hash(users[username]["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
     else:
+        user = users[username]
         access_token = create_access_token(identity=username, additional_claims={"role": user["role"]})
         return jsonify(access_token=access_token), 200
 
