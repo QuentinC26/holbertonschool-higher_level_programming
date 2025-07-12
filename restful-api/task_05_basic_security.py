@@ -9,7 +9,8 @@ import jwt
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-secret_key = secrets.token_urlsafe(32)
+app.config["JWT_SECRET_KEY"] = secrets.token_urlsafe(32)
+jwt = JWTManager(app)
 
 users = {
     "Anissa_du_06": {
