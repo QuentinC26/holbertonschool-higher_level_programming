@@ -25,21 +25,21 @@ users = {
 @auth.verify_password
 def verify_password(username, password):
     if username in users:
-        if not check_password_hash(users[username]["password"], password):
-            return false, 401
-        else:
+        if check_password_hash(users[username]["password"], password):
             return username
+        else:
+            return False
 
 @app.route('/login', methods=['POST'])
 def post_receive_token():
     data = request.get_json()
     username = data.get("username")
-    paswword = data.get("password")
-    if username in users:
-        if not check_password_hash(users["username"]["password"], password):
-            return false, 401
-        else:
-            return jsonify(create_access_token(users))
+    password = data.get("password")
+    if not username or not password or username not in users or not check_password_hash(users[username]["password"], password):
+        return jsonify({"error": "Invalid credentials"}), 401
+    else:
+        access_token = create_access_token(identity={"username": username, "role": users[username]["role"]})
+        return jsonify(access_token=access_token)
 
 if __name__ == '__main__':
     app.run(debug=True)
