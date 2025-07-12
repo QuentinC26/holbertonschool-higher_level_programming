@@ -10,17 +10,19 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 secret_key = secrets.token_urlsafe(32)
 
-Users = {
+users = {
     "Anissa_du_06": generate_password_hash("bella"),
     "surfeur_du_07": generate_password_hash("pacific_dream")
     }
 
 payload = {
-    'Users': 'test',
+    'Username': users,
     'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1)
 }
 
 token = jwt.encode(payload, secret_key, algorithm='HS256')
+verif_token = jwt.decode(token, key=secret_key, algorithms=['HS256', ])
+verif_token.validate()
 
 @auth.login_required
 @auth.verify_password
@@ -30,7 +32,7 @@ def verify_password(username, password):
         return username
 
 @app.route('/login')
-@auth.login_required
+@jwt_required()
 
 if __name__ == '__main__':
     app.run(debug=True)
