@@ -25,11 +25,11 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in users:
-        if check_password_hash(users[username]["password"], password):
-            return username
-        else:
-            return None
+    user = users.get(username)
+    if user and check_password_hash(users[username]["password"], password):
+        return username
+    else:
+        return None
 
 @app.route('/login', methods=['POST'])
 def post_receive_token():
