@@ -11,7 +11,7 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 secret_key = secrets.token_urlsafe(32)
 
-users = users = {
+users = {
     "Anissa_du_06": {
         "password": generate_password_hash("bella"),
         "role": "user"
