@@ -44,26 +44,22 @@ def post_receive_token():
 @app.route('/basic-protected')
 @auth.login_required
 def get_basic_protected_authorization():
-    if not users:
-        return {"401 Unauthorized"}
-    else:
-        return {"Basic Auth: Access Granted"}
+    return jsonify{"Basic Auth: Access Granted"}
 
 @app.route('/jwt-protected')
 @jwt_required()
 def get_jtw_protected_authorization():
-    if not users:
-        return {"401 Unauthorized"}
-    else:
-        return {"JWT Auth: Access Granted"}
+    return jsonify{"JWT Auth: Access Granted"}
 
 @app.route('/admin-only')
 @jwt_required()
 def get_admin_only():
+    data = request.get_json()
+    admin = data.get("admin")
     if not role == admin:
-        return {"error": "Admin access required"}, 403
+        return jsonify{"error": "Admin access required"}, 403
     else:
-        return {"Admin Access: Granted"}
+        return jsonify{"Admin Access: Granted"}
 
 
 if __name__ == '__main__':
