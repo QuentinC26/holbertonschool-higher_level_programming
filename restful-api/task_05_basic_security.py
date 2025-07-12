@@ -3,12 +3,14 @@ from flask import Flask, request, jsonify
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import secrets
-import datetime
+from datetime import timedelta
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = secrets.token_urlsafe(32)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
+
 jwt = JWTManager(app)
 
 @jwt.unauthorized_loader
@@ -33,11 +35,11 @@ def handle_needs_fresh_token_error(err):
 
 users = {
     "Anissa_du_06": {
-        "password": generate_password_hash("bella"),
+        "password": generate_password_hash("password"),
         "role": "user"
     },
     "surfeur_du_07": {
-        "password": generate_password_hash("pacific_dream"),
+        "password": generate_password_hash("password"),
         "role": "admin"
     }
 }
