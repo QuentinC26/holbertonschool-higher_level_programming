@@ -4,11 +4,11 @@ from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import secrets
 from datetime import timedelta
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity,  get_jwt
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET_KEY"] = secrets.token_urlsafe(32)
+app.config["JWT_SECRET_KEY"] = "secret_key"
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
 
 jwt = JWTManager(app)
@@ -50,7 +50,7 @@ def verify_password(username, password):
         if check_password_hash(users[username]["password"], password):
             return username
         else:
-            return False
+            return None
 
 @app.route('/login', methods=['POST'])
 def post_receive_token():
