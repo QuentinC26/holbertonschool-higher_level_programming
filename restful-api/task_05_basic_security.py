@@ -1,24 +1,25 @@
 #!/usr/bin/python3
 from flask import Flask, request, jsonify
 from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
-import secrets
-from datetime import timedelta
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity,  get_jwt
+from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import timedelta
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET_KEY"] = "secret_key"
+app.config["JWT_SECRET_KEY"] = "the-secret_key"
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
 
 jwt = JWTManager(app)
 
 users = {
     "Anissa_du_06": {
+        "username": "Anissa_du_06",
         "password": generate_password_hash("password"),
         "role": "user"
     },
     "surfeur_du_07": {
+        "username": "surfeur_du_07",
         "password": generate_password_hash("password"),
         "role": "admin"
     }
