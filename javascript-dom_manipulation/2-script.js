@@ -1,3 +1,2 @@
-const red = red.classList;
-const headerElement = document.getElementById("red_header");
-red.add("red");
+const header = document.getElementById("red_header");
+header.classList.add("red");
