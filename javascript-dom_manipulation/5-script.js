@@ -1,6 +1,6 @@
 const the_text = document.getElementById("update_header");
 
-add_item.addEventListener("click", new_text);
+the_text.addEventListener("click", new_text);
 
 function new_text() { 
     const new_text = the_text.classList;
