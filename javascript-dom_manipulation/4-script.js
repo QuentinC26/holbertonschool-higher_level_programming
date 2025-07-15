@@ -1,10 +1,12 @@
-document.addEventListener("click", add_item, false)
+const add_item = document.getElementById("add_item");
 
-function add_item() {
-    const header = document.getElementById("add_list");
-    const list = document.querySelector('my_list');
+function new_item() {
+    const list = document.querySelector('.my_list');
     const tag = document.createElement("li");
     const text = document.createTextNode("Item");
     tag.appendChild(text);
-    const addItemElement = add_list.appendChild(tag);
+    list.appendChild(tag);
 }
+add_item.onclick = function() { 
+    new_item();
+ };
