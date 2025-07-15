@@ -7,4 +7,5 @@ function new_item() {
     const tag = document.createElement("li");
     const text = document.createTextNode("Item");
     tag.appendChild(text);
+    list.appendChild(tag);
 };
