@@ -1,7 +1,9 @@
 document.addEventListener("click", add_item, false)
 
 function add_item() {
-    document.getElementById("add_item");
-    const my_list = element.classList;
-    list.add("<li>Item</li>");
+    const_list = document.querySelector('.my_list');
+    const tag = document.createElement("li");
+    const text = document.createTextNode("Item");
+    tag.appendChild(text);
+    const addItemElement = myList.appendChild(tag)
 }
