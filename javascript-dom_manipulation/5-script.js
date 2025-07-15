@@ -1,5 +1,4 @@
 const the_text = document.getElementById("update_header");
-const list = document.querySelector("header");
 
 add_item.addEventListener("click", new_text);
 
