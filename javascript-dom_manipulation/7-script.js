@@ -9,9 +9,9 @@ async function getMovies() {
     const json = await response.json();
     const resultsMovieName = json.films;
     const movies = []
-    length_movies = films.length
+    length_films = films.length
     length_list_movies = movies.length
-    for (index = 0; index < length_movies; index++) {
+    for (index = 0; index < length_films; index++) {
         if (key = "title") {
             movies.append(value);
         }
