@@ -8,9 +8,7 @@ async function getCharacter() {
 
     const json = await response.json();
     const characterName = json.name;
-    const character = document.getElementById("character")
-    character.innerText = characterName;
-    document.getElementById("").innerHTML = json.name;
+    document.getElementById("character").innerHTML = characterName;
   } catch (error) {
     console.error(error.message);
   }
