@@ -7,8 +7,17 @@ async function getMovies() {
     }
 
     const json = await response.json();
-    const MovieName = json.title;
-    document.getElementById("list_movies").innerText = MovieName;
+    const resultsMovieName = json.results;
+    movies = []
+    for (key, value in resultsMovieName) {
+        if (key = "title") {
+            movies.append(value);
+        }
+    }
+    for (index in movies){
+        document.getElementById("list_movies").innerText = index;
+        index = index + 1
+    }
   } 
   catch (error) {
     console.error(error.message);
