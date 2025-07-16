@@ -7,9 +7,8 @@ async function getHello() {
     }
 
     const json = await response.json();
-    const tag = document.createElement("head");
     Hello_in_French = document.getElementById("hello");
-    Hello_in_French.appendChild(tag);
+    Hello_in_French.innerText = json.hello;
   }
   catch (error) {
     console.error(error.message);
