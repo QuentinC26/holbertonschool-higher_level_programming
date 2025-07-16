@@ -7,16 +7,19 @@ async function getMovies() {
     }
 
     const json = await response.json();
-    const resultsMovieName = json.results;
-    movies = []
-    for (key, value in resultsMovieName) {
+    const resultsMovieName = json.films;
+    const movies = []
+    length_movies = films.length
+    length_list_movies = movies.length
+    for (index = 0; index < length_movies; index++) {
         if (key = "title") {
             movies.append(value);
         }
     }
-    for (index in movies){
-        document.getElementById("list_movies").innerText = index;
-        index = index + 1
+    for (index_two = 0; index_two < length_list_movies; index_two++) {
+        const tag = document.createElement("li");
+        print_movie += "<li>" + movies[index_two] + "</li>";
+        document.getElementById("list_movies").innerText = print_movie;
     }
   } 
   catch (error) {
