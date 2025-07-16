@@ -1,5 +1,5 @@
 async function getMovies() {
-  const url = "https://swapi-api.hbtn.io/api/people/5/?format=json";
+  const url = "https://swapi-api.hbtn.io/api/films/?format=json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -7,23 +7,16 @@ async function getMovies() {
     }
 
     const json = await response.json();
-    const resultsMovieName = json.films;
-    const movies = []
-    length_films = films.length
-    length_list_movies = movies.length
-    for (index = 0; index < length_films; index++) {
-        if (key = "title") {
-            movies.append(value);
-        }
-    }
-    for (index_two = 0; index_two < length_list_movies; index_two++) {
+    const moviesName = json.results;
+    for (let index in moviesName) {
+        add_title = moviesName[index].title;
+        moviesName.push(add_title);
         const tag = document.createElement("li");
-        const movie_name = document.createTextNode(index_two);
-        document.getElementById("list_movies")
-        tag.appendChild(movie_name);
+        tag.appendChild(moviesName);
+        const list_movies = document.getElementById("list_movies");
         list_movies.appendChild(tag);
     }
-  } 
+  }
   catch (error) {
     console.error(error.message);
   }
