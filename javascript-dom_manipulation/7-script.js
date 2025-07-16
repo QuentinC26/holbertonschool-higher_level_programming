@@ -20,7 +20,7 @@ async function getMovies() {
         const tag = document.createElement("li");
         const movie_name = document.createTextNode(index_two);
         document.getElementById("list_movies")
-        tag.appendChild(index_two);
+        tag.appendChild(movie_name);
         list_movies.appendChild(tag);
     }
   } 
