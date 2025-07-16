@@ -18,8 +18,10 @@ async function getMovies() {
     }
     for (index_two = 0; index_two < length_list_movies; index_two++) {
         const tag = document.createElement("li");
-        print_movie += "<li>" + movies[index_two] + "</li>";
-        document.getElementById("list_movies").innerText = print_movie;
+        const movie_name = document.createTextNode(index_two);
+        document.getElementById("list_movies")
+        tag.appendChild(index_two);
+        list_movies.appendChild(tag);
     }
   } 
   catch (error) {
