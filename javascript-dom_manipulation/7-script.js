@@ -10,9 +10,8 @@ async function getMovies() {
     const moviesName = json.results;
     for (let index in moviesName) {
         add_title = moviesName[index].title;
-        moviesName.push(add_title);
         const tag = document.createElement("li");
-        tag.appendChild(moviesName);
+        tag.textContent = add_title;
         const list_movies = document.getElementById("list_movies");
         list_movies.appendChild(tag);
     }
