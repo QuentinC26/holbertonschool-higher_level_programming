@@ -6,9 +6,11 @@ async function getCharacter() {
       throw new Error(`The request as failed: ${response.status}`);
     }
 
-    const json = await response.json("name");
+    const json = await response.json();
+    const characterName = json.name;
     const character = document.getElementById("character")
-    character.append(json)
+    character.innerText = characterName;
+    document.getElementById("").innerHTML = json.name;
   } catch (error) {
     console.error(error.message);
   }
