@@ -20,7 +20,7 @@ def generate_invitations (template, attendees):
             elif index == "event_location":
                 new_string = template.replace("{event_location}", index["event_location"])
             elif index == None:
-                new_value = attendees.replace(None, "N/A")
+                new_value = index.replace(None, "N/A")
     except ValueError:
         print("No data provided, no output files generated.")
         exit()
