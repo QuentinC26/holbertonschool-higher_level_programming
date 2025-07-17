@@ -18,6 +18,6 @@ def generate_invitations (template, attendees):
         if index == "event_location":
             new_string = template.replace("{event_location}", index["event_location"])
         if index.get("key") is None:
-            attendee["key"] = "N/A"
+            index["key"] = "N/A"
     print(template)
     print(attendees)
