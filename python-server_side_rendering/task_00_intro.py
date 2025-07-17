@@ -6,10 +6,8 @@ def generate_invitations (template, attendees):
         raise TypeError("Attendees must be list of dict")
     if not template:
         raise ValueError("Template is empty, no output files generated.")
-        exit()
     if not attendees:
         raise ValueError("No data provided, no output files generated.")
-        exit()
     for index in attendees:
         if index == "name":
             new_string = template.replace("{name}", index["name"])
