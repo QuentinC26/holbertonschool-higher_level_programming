@@ -4,10 +4,10 @@ def generate_invitations (template, attendees):
         raise TypeError("Template must be str")
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError("Attendees must be list of dict")
-    if template is None:
+    if not template:
         raise ValueError("Template is empty, no output files generated.")
         exit()
-    if attendees is None:
+    if not attendees:
         raise ValueError("No data provided, no output files generated.")
         exit()
     for index in attendees:
