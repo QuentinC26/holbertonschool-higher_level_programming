@@ -6,7 +6,7 @@ def generate_invitations (template, attendees):
         print("The template must be string")
         exit()
     except ValueError:
-        print("The template must be not empty")
+        print("Template is empty, no output files generated.")
     try:
         for index in attendees:
             if index == "name":
@@ -22,3 +22,5 @@ def generate_invitations (template, attendees):
     except TypeError:
         print("Attendees must be a list of dict")
         exit()
+      except ValueError:
+        print("No data provided, no output files generated.")
