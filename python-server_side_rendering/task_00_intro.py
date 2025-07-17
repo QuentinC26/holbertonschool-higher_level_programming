@@ -12,15 +12,15 @@ def generate_invitations (template, attendees):
     try:
         for index in attendees:
             if index == "name":
-                new_string = template.replace("{name}", index)
+                new_string = template.replace("{name}", attendees["name"])
             elif index == "event_title":
-                new_string = template.replace("{event_title}", index)
+                new_string = template.replace("{event_title}", attendees["event_title"])
             elif index == "event_date":
-                new_string = template.replace("{event_date}", index)
+                new_string = template.replace("{event_date}", attendees["event_date"])
             elif index == "event_location":
-                new_string = template.replace("{event_location}", index)
+                new_string = template.replace("{event_location}", attendees["event_location"])
             elif index == "None":
-                new_value = attendees.replace("None", "N/A")
+                new_value = attendees.replace(None, "N/A")
     except ValueError:
         print("No data provided, no output files generated.")
         exit()
