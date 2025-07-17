@@ -2,7 +2,7 @@
 def generate_invitations (template, attendees):
     if not isinstance(template, str):
         raise TypeError("Template must be str")
-    if not isinstance(attendees, list(dict)):
+    if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError("Attendees must be list of dict")
     try:
         pass
