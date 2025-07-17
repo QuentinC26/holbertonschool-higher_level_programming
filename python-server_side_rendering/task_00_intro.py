@@ -11,11 +11,13 @@ def generate_invitations (template, attendees):
     for index in attendees:
         if index == "name":
             new_string = template.replace("{name}", index["name"])
-        elif index == "event_title":
+        if index == "event_title":
             new_string = template.replace("{event_title}", index["event_title"])
-        elif index == "event_date":
+        if index == "event_date":
             new_string = template.replace("{event_date}", index["event_date"])
-        elif index == "event_location":
+        if index == "event_location":
             new_string = template.replace("{event_location}", index["event_location"])
-        elif index == None:
-            new_value = index.replace(None, "N/A")
+        if index.get("key") is None:
+            attendee["key"] = "N/A"
+    print(template)
+    print(attendees)
