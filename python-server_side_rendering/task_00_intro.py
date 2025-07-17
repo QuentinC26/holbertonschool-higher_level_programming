@@ -22,5 +22,5 @@ def generate_invitations (template, attendees):
     except TypeError:
         print("Attendees must be a list of dict")
         exit()
-      except ValueError:
+    except ValueError:
         print("No data provided, no output files generated.")
