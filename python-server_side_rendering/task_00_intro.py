@@ -22,9 +22,9 @@ def generate_invitations (template, attendees):
                 new_template = new_template.replace("{event_date}", value)
             if key == "event_location":
                 new_template = new_template.replace("{event_location}", value)
-        if os.path.exists(f"output_{index}.txt"):
+        if not os.path.exists(f"output_{index}.txt"):
             with open(f'output_{index}.txt', 'w') as file:
                 template_content = file.write(new_template)
         else:
-            print("This file not exists")
+            print("This file exists")
     print(new_template)
