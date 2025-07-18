@@ -23,6 +23,6 @@ def generate_invitations (template, attendees):
             if key == "event_location":
                 new_template = new_template.replace("{event_location}", value)
     print(new_template)
-    for index, attendees in enumerate(attendees, start=1):
-        with open('output_{index}.txt', 'w') as file:
-            template_content = json.dump(new_template, file)
+    for index, attendee in enumerate(attendees, start=1):
+        with open(f'output_{index}.txt', 'w') as file:
+            template_content = file.write(new_template)
