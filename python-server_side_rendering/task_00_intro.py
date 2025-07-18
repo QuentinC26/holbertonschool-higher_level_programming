@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def generate_invitations (template, attendees):
     if not template:
-        print("Template is empty, no output files generated.")
+        return("Template is empty, no output files generated.")
     if not attendees:
-        print("No data provided, no output files generated.")
+        return("No data provided, no output files generated.")
     if not isinstance(template, str):
         raise TypeError("Template must be str")
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
