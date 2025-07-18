@@ -2,9 +2,9 @@
 import os
 def generate_invitations (template, attendees):
     if not isinstance(template, str):
-        raise TypeError("Template must be str")
+        return "Error: Template must be str"
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
-        raise TypeError("Attendees must be list of dict")
+        raise "Error : Attendees must be list of dict"
     if not template:
         return "Template is empty, no output files generated."
     if not attendees:
