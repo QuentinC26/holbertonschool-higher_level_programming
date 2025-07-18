@@ -11,7 +11,7 @@ def generate_invitations (template, attendees):
     for index in attendees:
         for key, value in index.items():
             if value is None:
-                value == "N/A"
+                value = "N/A"
             elif key == "name":
                 new_string_01 = template.replace("{name}", value)
             elif key == "event_title":
