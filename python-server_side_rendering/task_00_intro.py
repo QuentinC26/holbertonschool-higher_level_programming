@@ -9,9 +9,9 @@ def generate_invitations (template, attendees):
         raise TypeError("Template must be str")
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError("Attendees must be list of dict")
-    for index in attendees:
+    for index, attendee in enumerate(attendees, start=1):
         new_template = template
-        for key, value in index.items():
+        for key, value in attendee.items():
             if value is None:
                 value = "N/A"
             if key == "name":
@@ -22,7 +22,6 @@ def generate_invitations (template, attendees):
                 new_template = new_template.replace("{event_date}", value)
             if key == "event_location":
                 new_template = new_template.replace("{event_location}", value)
-    print(new_template)
-    for index, attendee in enumerate(attendees, start=1):
         with open(f'output_{index}.txt', 'w') as file:
-            template_content = file.write(new_template)
+                template_content = file.write(new_template)
+    print(new_template)
