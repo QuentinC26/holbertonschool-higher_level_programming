@@ -16,7 +16,6 @@ def generate_invitations (template, attendees):
             if value is None:
                 value = "N/A"
             new_template = new_template.replace(f"{{{key}}}", value)
-        if not os.path.exists(f"output_{index}.txt"):
-            with open(f'output_{index}.txt', 'w') as file:
-                template_content = file.write(new_template)
+        with open(f'output_{index}.txt', 'w') as file:
+            template_content = file.write(new_template)
         
