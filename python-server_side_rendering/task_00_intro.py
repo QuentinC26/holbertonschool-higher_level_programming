@@ -12,6 +12,8 @@ def generate_invitations (template, attendees):
     for index, attendee in enumerate(attendees, start=1):
         new_template = template
         for key, value in attendee.items():
+            if key is None:
+                key = "N/A"
             if value is None:
                 value = "N/A"
             if key == "name":
@@ -25,3 +27,4 @@ def generate_invitations (template, attendees):
         if not os.path.exists(f"output_{index}.txt"):
             with open(f'output_{index}.txt', 'w') as file:
                 template_content = file.write(new_template)
+        
