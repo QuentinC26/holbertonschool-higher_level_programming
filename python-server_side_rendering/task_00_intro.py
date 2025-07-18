@@ -13,12 +13,12 @@ def generate_invitations (template, attendees):
         for key, value in index.items():
             if value is None:
                 value = "N/A"
-            elif key == "name":
+            if key == "name":
                 new_template = new_template.replace("{name}", value)
-            elif key == "event_title":
+            if key == "event_title":
                 new_template = new_template.replace("{event_title}", value)
-            elif key == "event_date":
+            if key == "event_date":
                 new_template = new_template.replace("{event_date}", value)
-            elif key == "event_location":
+            if key == "event_location":
                 new_template = new_template.replace("{event_location}", value)
     print(new_template)
