@@ -6,11 +6,9 @@ def generate_invitations (template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError("Attendees must be list of dict")
     if not template:
-        print("Template is empty, no output files generated.")
-        return
+        return "Template is empty, no output files generated.")
     if not attendees:
-        print("No data provided, no output files generated.")
-        return
+        return "No data provided, no output files generated.")
     for index, attendee in enumerate(attendees, start=1):
         new_template = template
         for key in ["name", "event_title", "event_date", "event_location"]:
