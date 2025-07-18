@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import json
+import os
 def generate_invitations (template, attendees):
     if not template:
         return("Template is empty, no output files generated.")
@@ -22,6 +22,9 @@ def generate_invitations (template, attendees):
                 new_template = new_template.replace("{event_date}", value)
             if key == "event_location":
                 new_template = new_template.replace("{event_location}", value)
-        with open(f'output_{index}.txt', 'w') as file:
+        if os.path.exists(f"output_{index}.txt"):
+            with open(f'output_{index}.txt', 'w') as file:
                 template_content = file.write(new_template)
+        else:
+            print("This file not exists")
     print(new_template)
