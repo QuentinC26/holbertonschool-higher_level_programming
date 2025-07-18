@@ -11,18 +11,11 @@ def generate_invitations (template, attendees):
         return("No data provided, no output files generated.")
     for index, attendee in enumerate(attendees, start=1):
         new_template = template
-        for key, value in attendee.items():
+        for key in ["name", "event_title", "event_date", "event_location"]:
             value = attendee.get(key)
             if value is None:
                 value = "N/A"
-            if key == "name":
-                new_template = new_template.replace("{name}", value)
-            if key == "event_title":
-                new_template = new_template.replace("{event_title}", value)
-            if key == "event_date":
-                new_template = new_template.replace("{event_date}", value)
-            if key == "event_location":
-                new_template = new_template.replace("{event_location}", value)
+            new_template = new_template.replace(f"{{{key}}}", value)
         if not os.path.exists(f"output_{index}.txt"):
             with open(f'output_{index}.txt', 'w') as file:
                 template_content = file.write(new_template)
