@@ -16,6 +16,10 @@ class VerboseList(list):
     def pop(self, index=None):
         if index is None:
             element = super().pop()
+            print("Popped [{}] from the list.".format((element)))
+            return element
         else:
             element = super().pop(index)
-        print("Popped [{}] from the list.".format((element)))
+            print("Popped [{}] from the list.".format((element)))
+            return element
+            
