@@ -62,7 +62,6 @@ class Rectangle:
             return line[:-1]
 
     def __repr__(self):
-        print(self)
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
