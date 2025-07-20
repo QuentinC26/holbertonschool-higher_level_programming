@@ -12,13 +12,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_integer_in_the_middle(self):
         self.assertEqual(max_integer([1, 2, 4, 3]), 4)
     def test_one_value_negative(self):
-        list = [4, 2, 3, 4, -5]
+        self.assertEqual(max_integer([1, 2, 4, -3]), 4)
     def test_only_value_negative(self):
-        list = [-4, -2, -3, -4, -5]
+        self.assertEqual(max_integer([-1, -2, -4, -3]), -1)
     def test_list_one_element(self):
-        list = [4]
+        self.assertEqual(max_integer([1]), 1)
     def test_list_empty(self):
-        list = []
+        pass
 
 if __name__ == '__main__':
     unittest.main()
