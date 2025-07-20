@@ -60,7 +60,7 @@ class Rectangle:
         else:
             for horizontal in range(self.height):
                 line = str(self.print_symbol) * self.width
-                list_of_height.append(str(self.print_symbol) * self.height)
+                list_of_height.append(line * self.height)
             return "\n".join(list_of_height)
 
     def __repr__(self):
