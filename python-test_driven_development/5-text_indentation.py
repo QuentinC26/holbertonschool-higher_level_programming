@@ -12,6 +12,8 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     new_text = ""
     for index in text:
+        if new_text == "" and index == " ":
+            continue
         new_text = new_text + index
         if index in ['.', '?', ':']:
             print(new_text.strip())
