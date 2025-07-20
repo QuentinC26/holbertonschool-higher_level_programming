@@ -60,7 +60,7 @@ class Rectangle:
             for horizontal in range(self.height):
                 for vertical in range(self.width):
                     str(self.print_symbol)
-                    line = str(self.print_symbol) * self.width
+                    line = str(self.print_symbol) * self.width + "\n"
                     final_line = line * self.height
             return final_line
 
