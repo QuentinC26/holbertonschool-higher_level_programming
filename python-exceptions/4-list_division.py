@@ -12,11 +12,14 @@ def list_division(my_list_1, my_list_2, list_length):
             print("wrong type")
             new_list.append(0)
         try:
-            if index == 0:
+            if my_list_2[index] == 0:
+                print("division by 0")
                 new_list.append(0)
-            result = my_list_1[index] / my_list_2[index]
-        except ZeroDivisionError:
-            print("division by 0")
+            else:
+                result = my_list_1[index] / my_list_2[index]
+                new_list.append(result)
+        except IndexError:
+            pass
         finally:
-            new_list.append(result)
+            pass
     return new_list
