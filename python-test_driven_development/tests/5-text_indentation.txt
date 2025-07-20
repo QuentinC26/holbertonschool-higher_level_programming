@@ -8,6 +8,7 @@ text = string :
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 <BLANKLINE>
 Quonam modo?
+<BLANKLINE>
 
 >>> text_indentation(4)
 Traceback (most recent call last):
