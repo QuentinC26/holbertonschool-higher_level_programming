@@ -54,13 +54,14 @@ class Rectangle:
 
     def __str__(self):
         line = ""
+        list_of_height = []
         if self.width == 0 or self.height == 0:
             return ""
         else:
             for horizontal in range(self.height):
-                for vertical in range(self.width):
-                    line = str(self.print_symbol) * self.width * self.height
-            return line
+                line = str(self.print_symbol) * self.width
+                list_of_height.append(str(self.print_symbol) * self.height)
+            return "\n".join(list_of_height)
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
