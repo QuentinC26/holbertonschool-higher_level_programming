@@ -59,10 +59,8 @@ class Rectangle:
         else:
             for horizontal in range(self.height):
                 for vertical in range(self.width):
-                    str(self.print_symbol)
-                    line = str(self.print_symbol) * self.width + "\n"
-                    final_line = line * self.height
-            return final_line
+                    line = str(self.print_symbol) * self.width * self.height
+            return line
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
