@@ -18,4 +18,6 @@ def text_indentation(text):
             print("")
             new_text = ""
     if new_text.strip():
-        print(new_text.strip(), end="")
+        print(new_text.strip())
+    elif new_text == "":
+        print()
