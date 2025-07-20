@@ -10,6 +10,9 @@ def text_indentation(text):
     '''
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    if not text.strip():
+        print()
+    return
     new_text = ""
     for index in text:
         new_text = new_text + index
@@ -18,4 +21,4 @@ def text_indentation(text):
             print()
             new_text = ""
     if new_text.strip():
-        print(new_text.strip(), end="")
+        print(new_text.strip())
