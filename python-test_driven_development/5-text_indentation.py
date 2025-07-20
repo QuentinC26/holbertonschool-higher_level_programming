@@ -16,6 +16,7 @@ def text_indentation(text):
         if index in ['.', '?', ':']:
             print(new_text.strip())
             print()
+            print()
             new_text = ""
     if new_text.strip():
         print(new_text.strip(), end="")
