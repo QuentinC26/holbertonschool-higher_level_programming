@@ -26,4 +26,6 @@ class hbtn_0e_0_usa():
             )
         result = ascending.fetchall()
         state_name_searched = sys.argv[4]
-        print(state_name_searched.format())
+        for rows in result:
+            pass
+        print(f"({rows[0]}, {state_name_searched.format()})")
