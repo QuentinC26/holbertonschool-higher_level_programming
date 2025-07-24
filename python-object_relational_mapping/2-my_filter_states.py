@@ -22,9 +22,9 @@ class hbtn_0e_0_usa():
             sys.exit(1)
         ascending = the_db.cursor()
         ascending.execute(
-            "SELECT * FROM states ORDER BY id ASC;"
+            "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;"
             )
         result = ascending.fetchall()
         state_name_searched = sys.argv[4]
         for rows in result:
-            print(f"({rows[0]}, '{state_name_searched.format()}')")
+            print(f"({rows[0]}, {state_name_searched.format()})")
