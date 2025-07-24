@@ -25,4 +25,5 @@ class hbtn_0e_0_usa():
             "SELECT id, name FROM states ORDER BY id ASC;"
             )
         result = ascending.fetchall()
-        print(result)
+        for row in result:
+            print(f"({row[0]}, '{row[1]}')")
