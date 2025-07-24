@@ -11,9 +11,14 @@ class hbtn_0e_0_usa():
     script that lists all states from the database hbtn_0e_0_usa
     '''
     the_db = MySQLdb.connect(
-        "Hostname", "mysql username", "mysql password", "database name"
-        )
+       host="localhost",
+       user= sys.argv[1],
+       password= sys.argv[2],
+       database= sys.argv[3]
+   )
     ascending = the_db.cursor()
     ascending.execute(
-                "SELECT states FROM hbtn_0e_0_usa ORDER BY states.id ASC;"
+                "SELECT DISTINCT * FROM states ORDER BY states.id ASC;"
                 )
+    result = ascending.fetchall()
+    print(result)
