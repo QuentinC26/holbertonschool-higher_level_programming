@@ -29,6 +29,7 @@ class hbtn_0e_0_usa():
             "ORDER BY id ASC;", (state_name,)
             )
         result = ascending.fetchall()
+        all_cities = []
         for row in result:
-            print(f"{row[1]}, ", end="")
-        print("")
+            all_cities.append(row[1])
+        print(", ".join(all_cities))
