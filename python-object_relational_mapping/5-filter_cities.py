@@ -30,5 +30,5 @@ class hbtn_0e_0_usa():
             )
         result = ascending.fetchall()
         for row in result:
-            print(f"{row[1]}, ", end ="")
+            print(f"{row[1]}, ", end="")
         print("")
