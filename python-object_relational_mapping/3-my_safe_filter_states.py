@@ -23,7 +23,8 @@ class hbtn_0e_0_usa():
         state_name_searched = sys.argv[4]
         ascending = the_db.cursor()
         ascending.execute(
-            "SELECT * FROM states WHERE name = %s ORDER BY id ASC;", (state_name_searched,)
+            "SELECT * FROM states WHERE name = %s ORDER BY id ASC;",
+            (state_name_searched,)
             )
         result = ascending.fetchall()
         for rows in result:
