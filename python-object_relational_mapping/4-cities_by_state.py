@@ -22,7 +22,7 @@ class hbtn_0e_0_usa():
             sys.exit(1)
         ascending = the_db.cursor()
         ascending.execute(
-            "SELECT id, name, state_id FROM cities WHERE state_id IN (SELECT id FROM states) ORDER BY id ASC;"
+            "SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id = states.id ORDER BY id ASC;"
             )
         result = ascending.fetchall()
         for row in result:
