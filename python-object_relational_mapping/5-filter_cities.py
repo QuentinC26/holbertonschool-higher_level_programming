@@ -29,4 +29,4 @@ class hbtn_0e_0_usa():
             )
         result = ascending.fetchall()
         for row in result:
-            print(f"({row[0]}, '{row[1]}', '{row[2]}')")
+            print(f"{row[1]}")
