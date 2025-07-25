@@ -2,7 +2,7 @@
 '''
 script that lists all states from the database hbtn_0e_0_usa
 '''
-import MySQLdb
+import SQLAlchemy
 import sys
 from model_state import Base, State
 
