@@ -25,8 +25,10 @@ class hbtn_0e_0_usa():
         ascending.execute(
             "SELECT cities.id, cities.name, states.name "
             "FROM cities INNER JOIN states ON cities.state_id = states.id "
-            "ORDER BY id ASC;"
+            "WHERE states.name = %s "
+            "ORDER BY id ASC;", (state_name,)
             )
         result = ascending.fetchall()
         for row in result:
-            print(f"{row[1]}")
+            print(f"{row[1]}, ", end ="")
+        print("")
