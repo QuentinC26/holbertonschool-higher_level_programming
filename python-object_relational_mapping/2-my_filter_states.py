@@ -20,11 +20,11 @@ class hbtn_0e_0_usa():
         if len(sys.argv) != 5:
             print("the sys.argv must be 4")
             sys.exit(1)
+        state_name_searched = sys.argv[4]
         ascending = the_db.cursor()
         ascending.execute(
             "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;"
             )
         result = ascending.fetchall()
-        state_name_searched = sys.argv[4]
         for rows in result:
             print(f"({rows[0]}, '{state_name_searched.format()}')")
