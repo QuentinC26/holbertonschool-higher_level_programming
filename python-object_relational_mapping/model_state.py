@@ -12,7 +12,5 @@ class State(Base):
     Write a python file that contains the class definition of a State and an instance Base = declarative_base()
     '''
     __tablename__ = 'states'
-    id = Column("states_id", Integer, primary_key=True)
-    name = Column("states_name", String(128), primary_key=False)
-
-Base.metadata.create_all(engine)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), primary_key=False)
