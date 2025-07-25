@@ -20,7 +20,7 @@ class hbtn_0e_0_usa():
         if len(sys.argv) != 5:
             print("the sys.argv must be 4")
             sys.exit(1)
-        state_name_searched = sys.argv[4]
+        state_name = sys.argv[4]
         ascending = the_db.cursor()
         ascending.execute(
             "SELECT cities.id, cities.name, states.name "
