@@ -5,7 +5,7 @@ script that lists all states from the database hbtn_0e_0_usa
 from sqlalchemy import create_engine, Column, String, Integer, insert
 import sys
 from model_state import Base, State
-from model_city import Base, State
+from model_city import Base, City
 from sqlalchemy.orm import sessionmaker
 import requests
 
@@ -26,9 +26,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
+    new_result = session.query(State).join(City).order_by(City.id)
     query = (
             session.query(State)
-            .order_by(cities.id)
+            .order_by(City.id)
             .all()
         )
     for state in query:
