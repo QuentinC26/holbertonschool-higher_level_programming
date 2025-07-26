@@ -33,4 +33,3 @@ class hbtn_0e_0_usa():
             if session.query(State).first() is None:
                 print("Nothing")
             print("{}: {}".format(state.id, state.name))
-        session.close()
