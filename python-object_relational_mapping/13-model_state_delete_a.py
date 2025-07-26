@@ -30,7 +30,7 @@ if __name__ == "__main__":
             .order_by(State.id)
             .all()
         )
-    session.query(State.name).filter(State.name.like('%a%')).delete()
+    state = session.query(State).filter(State.name.like('%a%')).delete()
     session.commit()
     for state in query:
         print("{}: {}".format(state.id, state.name))
