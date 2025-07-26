@@ -30,8 +30,10 @@ class hbtn_0e_6_usa():
 
         Session = sessionmaker(bind=engine)
         session = Session()
-        new_state = State(
-            name="Louisiana"
+    state = session.query(State).order_by(State.id).first()
+    new_state = State(
+        name="Louisiana"
         )
-        hbtn_0e_6_usa.add(new_state)
-        hbtn_0e_6_usa.commit()
+    session.add(new_state)
+    session.commit()
+    print(state)
