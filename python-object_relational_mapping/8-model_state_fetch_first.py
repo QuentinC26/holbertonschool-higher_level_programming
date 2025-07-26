@@ -2,7 +2,6 @@
 '''
 script that lists all states from the database hbtn_0e_0_usa
 '''
-import MySQLdb
 from sqlalchemy import create_engine, Column, String, Integer
 import sys
 from model_state import Base, State
@@ -27,6 +26,6 @@ class hbtn_0e_0_usa():
         Session = sessionmaker(bind=engine)
         session = Session()
         for state in session.query(State).order_by(State.id).limit(1):
-            if session.query(State).limit(1) is None:
+            if session.query(State).first() is None:
                 print("Nothing")
             print("{}: {}".format(state.id, state.name))
