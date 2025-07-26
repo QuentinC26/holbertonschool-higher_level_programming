@@ -5,7 +5,7 @@ const three = 'JavaScript is amazing';
 const unified = one + '\n' + two + '\n' + three;
 console.log(unified);
 
-const index = 0;
+let index = 0;
 while (index < 10) {
   index++;
 }
