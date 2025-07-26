@@ -25,7 +25,7 @@ class hbtn_0e_0_usa():
             sys.exit(1)
         Session = sessionmaker(bind=engine)
         session = Session()
-        for state in session.query(State).order_by(State.id).limit(1):
-            if state is None:
-                print("Nothing")
-            print("{}: {}".format(state.id, state.name))
+        state = session.query(State).order_by(State.id).first()
+        if state is None:
+            print("Nothing")
+        print("{}: {}".format(state.id, state.name))
