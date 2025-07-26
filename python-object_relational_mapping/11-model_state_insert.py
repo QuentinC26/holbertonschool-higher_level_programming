@@ -36,3 +36,4 @@ class hbtn_0e_6_usa():
         )
     session.add(new_state)
     session.commit()
+    print(new_state.id)
