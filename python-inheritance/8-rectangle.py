@@ -4,32 +4,7 @@ Project Inheritance
 
 i create a class.
 """
-
-
-class BaseGeometry:
-    """
-    Project Inheritance
-
-    i create a class.
-    """
-    def area(self):
-        """
-        Project Inheritance
-
-        i create a class.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Project Inheritance
-
-        i create a class.
-        """
-        if not type(value) == int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
