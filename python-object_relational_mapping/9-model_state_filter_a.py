@@ -27,8 +27,14 @@ class hbtn_0e_0_usa():
         engine = create_engine(url, pool_pre_ping=True)
         # Create table of database
         Base.metadata.create_all(engine)
-        
+
         Session = sessionmaker(bind=engine)
         session = Session()
-        for state in session.query(State).filter(State.name.like('%a%')).order_by(State.id).all():
+        query = (
+            session.query(State)
+            .filter(State.name.like('%a%'))
+            .order_by(State.id)
+            .all()
+        )
+        for state in query:
             print("{}: {}".format(state.id, state.name))
