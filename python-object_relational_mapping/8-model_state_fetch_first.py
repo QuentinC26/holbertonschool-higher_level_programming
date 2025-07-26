@@ -3,9 +3,14 @@
 script that lists all states from the database hbtn_0e_0_usa
 '''
 import MySQLdb
-import sqlalchemy
+from sqlalchemy import create_engine, Column, String, Integer
 import sys
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+import requests
+
+engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format("quentin", "Break012", "hbtn_0e_6_usa"), pool_pre_ping=True)
+Base.metadata.create_all(engine)
 
 
 class hbtn_0e_0_usa():
@@ -22,13 +27,10 @@ class hbtn_0e_0_usa():
         if len(sys.argv) != 4:
             print("the sys.argv must be 3")
             sys.exit(1)
-        ascending = the_db.cursor()
-        ascending.execute(
-            "SELECT id, name FROM states ORDER BY id ASC;"
-            )
-        result = ascending.fetchmany(1)
-        for row in result:
-            if row is None:
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        for state in session.query(State).order_by(State.id).limit(1):
+            if session.query(State).first() is None:
                 print("Nothing")
-            else:
-                print(f"{row[0]}: {row[1]}")
+            print("{}: {}".format(state.id, state.name))
+        session.close()
