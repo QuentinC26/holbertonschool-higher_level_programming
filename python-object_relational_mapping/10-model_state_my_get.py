@@ -37,7 +37,7 @@ class hbtn_0e_0_usa():
             .order_by(State.id)
             .all()
         )
+        if len(query) == 0:
+            print("Not found")
         for state in query:
-            if len(query) == 0:
-                print("Not found")
             print("{}".format(state.id))
