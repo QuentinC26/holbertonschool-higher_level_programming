@@ -9,7 +9,8 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 import requests
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format("quentin", "Break012", "hbtn_0e_6_usa"), pool_pre_ping=True)
+engine = create_engine(
+    f('mysql+mysqldb://{user}:{pwd}@127.0.0.1:3306/{db_name}', pool_pre_ping=True))
 Base.metadata.create_all(engine)
 
 
