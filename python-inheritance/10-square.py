@@ -19,8 +19,8 @@ class Square(Rectangle):
             raise TypeError("size must be an integer")
         if size <= 0:
             raise ValueError("size must be greater than 0")
-        self.__size = size
         self.integer_validator("size", size)
+        self.__size = size
 
     def area(self):
         return self.__size * self.__size
