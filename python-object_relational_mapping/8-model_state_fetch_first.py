@@ -14,15 +14,20 @@ class hbtn_0e_0_usa():
     script that lists all states from the database hbtn_0e_0_usa
     '''
     if __name__ == "__main__":
-        user = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        url = f"mysql+mysqldb://{user}:{password}@127.0.0.1:3306/{database}"
-        engine = create_engine(url, pool_pre_ping=True)
-        Base.metadata.create_all(engine)
         if len(sys.argv) != 4:
             print("the sys.argv must be 3")
             sys.exit(1)
+        user = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
+
+        # create URL Connexion
+        url = f"mysql+mysqldb://{user}:{password}@127.0.0.1:3306/{database}"
+        # create Engine Object
+        engine = create_engine(url, pool_pre_ping=True)
+        # Create table of database
+        Base.metadata.create_all(engine)
+        
         Session = sessionmaker(bind=engine)
         session = Session()
         state = session.query(State).order_by(State.id).first()
