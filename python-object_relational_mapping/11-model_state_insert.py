@@ -36,4 +36,3 @@ class hbtn_0e_6_usa():
         )
     session.add(new_state)
     session.commit()
-    print(state)
