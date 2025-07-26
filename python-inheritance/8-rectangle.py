@@ -38,8 +38,10 @@ class Rectangle(BaseGeometry):
 
     i create a new class.
     """
-    def __init__(self, width, height):
+    def __init__(self, width, height): 
+        super().__init__()
         self.integer_validator("height", height)
         self.integer_validator("width", width)
         self.__width = width
         self.__height = height
+        integer_validator(Rectangle)
