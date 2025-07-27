@@ -5,7 +5,7 @@ if (isNaN(Number(process.argv[2]))) {
   console.log('Missing size');
 }
 for (let index = 0; index < Number(process.argv[2]); index++) {
-  for (let index_2 = 0; index_2 < Number(process.argv[2]); index_2++) {
+  for (let index2 = 0; index2 < Number(process.argv[2]); index2++) {
     process.stdout.write(caracters);
   }
   console.log();
