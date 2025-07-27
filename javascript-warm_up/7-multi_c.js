@@ -1,2 +1,5 @@
 #!/usr/bin/node
-x = "C is fun"
+const process = require('process');
+sentence = 'C is fun'
+for (index = 0; index < Number(process.argv[2]); index++)
+  console.log(sentence);
