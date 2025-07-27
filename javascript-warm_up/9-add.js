@@ -6,11 +6,7 @@ function add(a, b) {
   return a + b;
 }
 
-if (isNaN(Number(process.argv[2]))) {
-  console.log('NaN');
-} else if(process.argv.length === 2) {
-  console.log('NaN');
-} else if(process.argv.length === 3) {
+if (process.argv.length !== 4) {
   console.log('NaN');
 } else {
   const result = add();
