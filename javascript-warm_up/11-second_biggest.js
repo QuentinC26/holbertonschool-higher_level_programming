@@ -9,7 +9,7 @@ if (Number(process.argv.length) === 2) {
     args = process.argv.slice(2)
     for (index = 0; index < args.length; index++) {
           biggest_second.push((args[index]))
-          biggest_second.reverse();
+          biggest_second.sort();
         }
-   console.log(biggest_second[1])
+    console.log(biggest_second.slice(4, 5))
 }
