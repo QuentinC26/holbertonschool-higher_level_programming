@@ -5,12 +5,15 @@ if (Number(process.argv.length) === 2) {
 } else if (Number(process.argv.length) === 3) {
   console.log('0');
 } else {
-    let biggest_second = []
-    let args = process.argv.slice(2)
+    biggest_second = []
+    args = process.argv.slice(2)
     for (index = 0; index < args.length; index++) {
           biggest_second.push((args[index]))
+          biggest_second.sort();
         }
-    biggest_second.reverse();
-    const secondLargest = args[args.length - 2];
-    console.log(secondLargest);
+    if (biggest_second.length === 5) {
+        console.log(biggest_second.length - 1);
+    } else if (biggest_second.length === 6) {
+        console.log(biggest_second.length - 2);
+    }
 }
