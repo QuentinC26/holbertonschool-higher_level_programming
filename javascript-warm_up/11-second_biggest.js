@@ -11,7 +11,6 @@ if (Number(process.argv.length) === 2) {
           biggest_second.push((args[index]))
         }
     biggest_second.reverse();
-    console.log(biggest_second)
     const secondLargest = args[args.length - 2];
     console.log(secondLargest);
 }
