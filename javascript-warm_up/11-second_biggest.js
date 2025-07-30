@@ -11,5 +11,5 @@ if (Number(process.argv.length) === 2) {
           biggest_second.push((args[index]))
           biggest_second.sort();
         }
-    console.log(biggest_second.length - 2)
+    console.log(biggest_second.length - 1)
 }
