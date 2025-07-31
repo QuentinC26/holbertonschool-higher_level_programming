@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 '''
 pascal triangle
@@ -14,5 +13,5 @@ def pascal_triangle(n):
         return []
     if not isinstance(n, int):
         return []
-    else: 
+    else:
         return pascal
