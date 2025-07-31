@@ -4,8 +4,6 @@ import json
 
 def serialize_to_xml(dictionary, filename):
     root_element = ET.Element("data")
-    if dictionary is None or len(dictionary) == 0 :
-        raise ValueError("the dictionary is empty !!")
     for key, values in dictionary.items():
         child_element = ET.SubElement(root_element, key)
         child_element.text = str(values)
