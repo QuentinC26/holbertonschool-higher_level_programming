@@ -10,9 +10,10 @@ class CountedIterator(ABC):
         return self.counter
 
     def __next__(self):
-        next(self.iterator)
-        self.counter = counter + 1
-        if not next(self.iterator):
+        new_iterator = next(self.iterator)
+        self.counter = self.counter + 1
+        if not new_iterator:
             raise StopIteration("")
         else:
-            return next(self.iterator)
+            return new_iterator
+            
