@@ -1,19 +1,12 @@
 #!/usr/bin/node
 const process = require('process');
-if (Number(process.argv.length) === 2) {
+if (process.argv.length === 2) {
   console.log('0');
-} else if (Number(process.argv.length) === 3) {
+} else if (process.argv.length === 3) {
   console.log('0');
 } else {
-    biggest_second = []
     args = process.argv.slice(2)
-    for (index = 0; index < args.length; index++) {
-          biggest_second.push((args[index]))
-          biggest_second.sort();
-        }
-    if (biggest_second.length === 5) {
-        console.log(biggest_second.length - 1);
-    } else if (biggest_second.length === 6) {
-        console.log(biggest_second.length - 2);
-    }
+    const numbers = args.map(arg => Number(arg));
+    numbers.sort((a, b) => a - b)
+    console.log(numbers[numbers.length - 2])
 }
